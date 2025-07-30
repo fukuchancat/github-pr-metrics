@@ -1,0 +1,15 @@
+[tools]
+go = "latest"
+golangci-lint = "latest"
+
+[tasks.default]
+description = "Run the GitHub PR metrics tool"
+run = "go run ./cmd/github-pr-metrics --url $GITHUB_URL --token $GITHUB_TOKEN --repo $REPOSITORY"
+
+[tasks.lint]
+description = "Lint the code"
+run = "golangci-lint run"
+
+[tasks.format]
+description = "Format the code"
+run = "golangci-lint fmt"
